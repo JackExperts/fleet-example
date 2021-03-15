@@ -1,0 +1,17 @@
+namespace: exemplo-gitops
+targetCustomizations:
+- name: production
+  clusterSelector:
+    matchLabels:
+      env: production
+  yaml:
+    overlays:
+    - prod
+
+- name: bsb
+  clusterSelector:
+    matchLabels:
+      env: bsb
+  yaml:
+    overlays:
+    - dev
